@@ -1,6 +1,6 @@
 import React from 'react';
 
-const Rockets = () => {
+const Rocket = () => {
   return (
     <div className="container d-flex flex-row justify-content-center my-3">
       <div className="mx-4">
@@ -15,4 +15,4 @@ const Rockets = () => {
   )
 };
 
-export default Rockets;
+export default Rocket;

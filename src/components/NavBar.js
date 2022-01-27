@@ -7,7 +7,7 @@ const NavBar = () => {
       <div className="mx-3">I am NavBar</div>
       <div>
         <NavLink to="/" activeClassName="active-link "><span className="mx-3">Rockets</span></NavLink>
-        <NavLink to="/Missions" activeClassName="active-link "><span className="mx-3">Missions</span></NavLink>
+        <NavLink to="/MissionsContainer" activeClassName="active-link "><span className="mx-3">Missions</span></NavLink>
         <NavLink to="/MyProfile" activeClassName="active-link "><span className="mx-3">My Profile</span></NavLink>
         
       </div>
