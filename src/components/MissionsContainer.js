@@ -1,20 +1,19 @@
+import React, {useEffect} from 'react';
+import { useSelector, useDispatch } from 'react-redux';
+
 import Mission from './Mission';
+import { fetchMissions } from '../redux/missionsReducer';
 
 const MissionsContainer = () => {
-  const missions = [
-    {
-      mission_id: 0,
-      mission_name: "To the Moon",
-      description: "Just around the corner", 
-      status: false
-    },{
-      mission_id: 1,
-      mission_name: "To Mars",
-      description: "A longer journey", 
-      status: true,
-    },
-  ];
 
+  const dispatch = useDispatch();
+
+  useEffect(() => {
+    fetchMissions(dispatch)
+  }, []);
+
+  const missionsStore = useSelector((store) => Object.values(store.missionsReducer.missions));
+  
   return (
     <div>
       <table>
@@ -28,11 +27,11 @@ const MissionsContainer = () => {
         </thead>
         <tbody>
           {
-            missions.map((mission)=>(
+            missionsStore.map((mission)=>(
               <Mission 
               key={mission.mission_id}
               id={mission.mission_id}
-              mission_name ={ mission.mission_name}
+              mission_name ={mission.mission_name}
               description = {mission.description}
               status={mission.status}
 
