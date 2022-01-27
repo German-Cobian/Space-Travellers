@@ -1,18 +1,28 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 
-const Rocket = () => {
+const Rocket = (props) => {
+  const { id, flickr_images, rocket_name, description } = props
+
+
   return (
-    <div className="container d-flex flex-row justify-content-center my-3">
-      <div className="mx-4">
-        <h5>Image Here</h5>
+    <div key={id} className="d-flex flex-row justify-content-center">
+      <div>
+        <img src={flickr_images} alt="flickr_images" className="rockets-images" />
       </div>
       <div>
-        <h5>Rocket Name</h5>
-        <p>Description</p>
-        <button>Reserve Rocket</button>
+        <h5 className="pr-5">{rocket_name}</h5>
+        <p className="px-5">{description}</p>
       </div>
     </div>
   )
+};
+
+Rocket.propTypes = {
+  id: PropTypes.string.isRequired,
+  rocket_name: PropTypes.string.isRequired,
+  description: PropTypes.string.isRequired,
+  flickr_images: PropTypes.string.isRequired,
 };
 
 export default Rocket;
