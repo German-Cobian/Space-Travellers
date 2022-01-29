@@ -26,7 +26,8 @@ const RocketsContainer = () => {
     fetchRockets(dispatch)
   }, []);
 
-  const rocketsStore = useSelector((store) => Object.values(store.rocketsReducer.rockets));
+  // const rocketsStore = useSelector((store) => Object.values(store.rocketsReducer.rockets));
+  const rocketsStore = useSelector((store) => store.rocketsReducer.rockets);
   
   return (
     <div>

@@ -12,17 +12,18 @@ const MissionsContainer = () => {
     fetchMissions(dispatch)
   }, []);
 
-  const missionsStore = useSelector((store) => Object.values(store.missionsReducer.missions));
-  
+ // const missionsStore = useSelector((store) => Object.values(store.missionsReducer.missions));
+  const missionsStore = useSelector((store) => store.missionsReducer.missions);
+
   return (
     <div>
-      <table>
-        <thead className="d-flex flex-row justify-content-center">
+      <table className="table table-bordered">
+        <thead >
           <tr>
-            <th className="px-5">Mission</th>
-            <th className="px-5">Description</th>
-            <th className="px-5">Status</th>
-            <th className="px-5">Join/Leave Mission</th>
+            <th className="col-1">Mission</th>
+            <th className="">Description</th>
+            <th className="col2">Status</th>
+            <th className="col-2">Join/Leave Mission</th>
           </tr>
         </thead>
         <tbody>
