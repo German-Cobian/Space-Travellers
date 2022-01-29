@@ -1,5 +1,5 @@
 import React, {useEffect} from 'react';
-import { useSelector, useDispatch } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 
 import Rocket from './Rocket';
 import { fetchRockets } from '../redux/rocketsReducer';
@@ -8,41 +8,35 @@ import { fetchRockets } from '../redux/rocketsReducer';
 
 const RocketsContainer = () => {
 
-  const rockets = [{
-    id: 1,
-    rocket_name: "first mission",
-    description: "moon", 
-    status: false
-  },{
-    id: 2,
-    rocket_name: "second mission",
-    description: "mars", 
-    status: true,
-  },];
+  // const rocketsStore = useSelector((store) => Object.values(store.rocketsReducer.rockets));
+  const rocketsStore = useSelector((store) => store.rocketsReducer.rockets);
 
   const dispatch = useDispatch();
 
   useEffect(() => {
-    fetchRockets(dispatch)
+    if(!rocketsStore.length) {
+    fetchRockets(dispatch);
+    }
   }, []);
 
-  // const rocketsStore = useSelector((store) => Object.values(store.rocketsReducer.rockets));
-  const rocketsStore = useSelector((store) => store.rocketsReducer.rockets);
+  
   
   return (
     <div>
       {
-        rocketsStore.map((rocket)=>(
+        rocketsStore.map((rocket) => (
           <Rocket 
           key={rocket.id}
+          id={rocket.id}
           flickr_images={rocket.flickr_images}
           rocket_name ={rocket.rocket_name}
           description = {rocket.description}
+          reserved = {rocket.reserved}
           />
         ))
       }
     </div>
-  )
-}
+  );
+};
 
 export default RocketsContainer; 

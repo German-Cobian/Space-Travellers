@@ -1,8 +1,8 @@
 import axios from 'axios';
 
 const SET_MISSIONS = 'space-travelers/missions/SET_MISSIONS';
-const JOIN_MISSION = 'space-travelers/missions/JOIN_MISSIONS';
-const LEAVE_MISSION = 'space-travelers/missions/LEAVE_MISSIONS';
+const JOIN_MISSION = 'space-travelers/missions/JOIN_MISSION';
+const LEAVE_MISSION = 'space-travelers/missions/LEAVE_MISSION';
 const URL = 'https://api.spacexdata.com/v3/missions';
 
 const initialState = {

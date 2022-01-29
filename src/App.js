@@ -1,9 +1,9 @@
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import NavBar from './components/NavBar';
-import Rocket from './components/Rocket';
+
 import MissionsContainer from './components/MissionsContainer';
 import RocketsContainer from './components/RocketsContainer';
-import MyProfile from './components/MyProfile';
+import Profile from './components/Profile';
 
 function App() {
   return (
@@ -13,7 +13,7 @@ function App() {
         <Routes>
             <Route path="/" element={<RocketsContainer />} />
             <Route path="/MissionsContainer" element={<MissionsContainer />} />
-            <Route path="/MyProfile" element={<MyProfile />} />
+            <Route path="/MyProfile" element={<Profile />} />
         </Routes>
       </BrowserRouter>
     </div>
