@@ -4,7 +4,7 @@ A React-Redux app that fetches information on Rockets from this API `https://api
 
 ![Rockets listing](/src/assets/Rockets.png?raw=true "Rockets listing")
 
-... and information on Rockets from this API `https://api.spacexdata.com/v3/missions`
+... and information on Missions from this API `https://api.spacexdata.com/v3/missions`
 
 ![Missions listing](/src/assets/Missions.png?raw=true "Missions listing")
 
